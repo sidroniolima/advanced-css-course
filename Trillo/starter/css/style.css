@@ -286,20 +286,42 @@ body {
     transform: scale(1);
     box-shadow: none; } }
 
-.paragraph {
-  margin-bottom: 1.5rem; }
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem; }
 
 .list {
   list-style: none;
-  columns: 2;
-  margin-bottom: 1.5rem; }
-  .listlist__item {
-    padding: 5rem 0; }
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+  display: flex;
+  flex-wrap: wrap; }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: .7rem; }
+  .list__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: .7rem;
+    background-color: var(--color-primary);
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover; }
 
-.recommend__photo {
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-  border: 2px solid #fff; }
-  .recommend__photo:not(:first-of-type) {
-    margin-left: -2rem; }
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center; }
+  .recommend__photo {
+    box-sizing: content-box;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    border: 3px solid #fff; }
+    .recommend__photo:not(:first-of-type) {
+      margin-left: -2rem; }
+  .recommend__count {
+    margin-right: auto; }
